@@ -1,0 +1,19 @@
+use pbv444;
+show tables;
+
+select * from cars where year<2000;
+select * from cars where year>2015;
+select * from cars where year in (2008,2009,2010);
+select * from cars where year not in (2008,2009,2010);
+select * from cars where year=price;
+
+select * from cars where model like 'bmw%' and year<2014;
+select * from cars where model like 'audi%' and year>2014;
+select * from cars limit 5;
+select * from cars order by id DESC limit 5;
+
+select AVG(price) as avgCarPrice from cars where model like 'kia%';
+select AVG(price) as avgCarPrice,model from cars group by model;
+select count(*) as carQty, model from cars group by model having carQty>=10;
+
+
